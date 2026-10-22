@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102a43">
+  <title>SAUS | Ativos e suprimentos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="saus.js" defer></script>
+</head>
+<body>
+  <div id="login-screen"></div>
+  <div class="app-shell" hidden>
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#inicio" aria-label="SAUS, início">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-copy"><strong>SAUS</strong><small>ATENDIMENTO AO USUÁRIO</small></span>
+      </a>
+      <div class="nav-label">ESPAÇO DE TRABALHO</div>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a class="nav-link active" href="#inicio" data-view="inicio"><span class="nav-icon">⌂</span>Visão geral</a>
+        <a class="nav-link" href="#equipamentos" data-view="equipamentos"><span class="nav-icon">▦</span>Equipamentos<span class="nav-count" id="nav-machine-count">0</span></a>
+        <a class="nav-link" href="#movimentacoes" data-view="movimentacoes"><span class="nav-icon">↕</span>Movimentações<span class="nav-count" id="nav-movement-count">0</span></a>
+        <a class="nav-link" href="#entregas" data-view="entregas"><span class="nav-icon">▣</span>Entregas<span class="nav-count" id="nav-people-count">0</span></a>
+      </nav>
+      <div class="nav-label nav-label-spaced">GESTÃO</div>
+      <nav class="main-nav" aria-label="Gestão">
+        <a class="nav-link" href="#relatorios" data-view="relatorios" data-admin-only hidden><span class="nav-icon">▤</span>Relatórios</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <span class="help-symbol">i</span>
+          <div><strong>Precisa de ajuda?</strong><small>Fale com o administrador</small></div>
+          <span class="help-arrow">↗</span>
+        </div>
+        <div class="profile-row">
+          <div class="avatar" id="profile-initials">SA</div>
+          <div class="profile-copy"><strong id="profile-name">Usuário</strong><small id="profile-role">Perfil</small></div>
+          <button class="icon-button profile-menu" data-action="logout" aria-label="Sair" title="Sair">↗</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" id="mobile-menu" aria-label="Abrir menu">☰</button>
+        <div class="breadcrumbs"><span>Workspace</span><span class="crumb-divider">/</span><strong id="breadcrumb-current">Visão geral</strong></div>
+        <div class="topbar-actions">
+          <span class="today-label" id="today-label"></span>
+          <span class="topbar-separator"></span>
+          <button class="icon-button notification-button" aria-label="Notificações" title="Notificações">♧<i></i></button>
+          <div class="avatar avatar-small" id="top-avatar">SA</div>
+        </div>
+      </header>
+      <div class="page-content" id="page-content"></div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="modal-backdrop" hidden></div>
+</body>
+</html>
